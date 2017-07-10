@@ -1,0 +1,12 @@
+.item-title-big{
+    height: 2.5rem;
+}
+.item-title-big .item-title,.item-title-big .item-after{
+    font-size: 1.2rem;
+}
+.bar-nav~.content{
+    top:0;
+}
+.item-content{
+    padding-top: 1rem;
+}

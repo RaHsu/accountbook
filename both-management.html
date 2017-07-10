@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户管理</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/account-management.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="page">
+    <header class="bar bar-nav">
+        <h1 class="title">用户管理</h1>
+    </header>
+    <nav class="bar bar-tab">
+        <a class="tab-item external" href="home.html">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">主页</span>
+        </a>
+        <a class="tab-item external" href="account-management.html">
+            <span class="icon icon-edit"></span>
+            <span class="tab-label">账目</span>
+        </a>
+        <a class="tab-item external active" href="#">
+            <span class="icon icon-settings"></span>
+            <span class="tab-label">管理</span>
+        </a>
+        <a class="tab-item external" href="#">
+            <span class="icon icon-me"></span>
+            <span class="tab-label">我</span>
+        </a>
+    </nav>
+    <div class="content">
+        <div class="buttons-tab">
+            <a href="#admin" class="tab-link active button">管理员管理</a>
+            <a href="#user" class="tab-link button">用户管理</a>
+        </div>
+        <div class="content-block">
+            <div class="tabs">
+                <div id="admin" class="tab active">
+                    <p><a href="#" class="open-popup button button-fill button-success button-big" data-popup=".popup-add-admin">
+                        <i class="fa fa-plus fa-fw" ></i>
+                        添加管理员</a></p>
+                    <div class="list-block media-list">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">RaHsu</div>
+                                            <div class="item-after">管理员</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-button">
+                                    <p class="buttons-row">
+                                        <a href="#" class="open-popup button button-fill" data-popup=".popup-modify-admin">
+                                            <i class="fa fa-pencil fa-fw" ></i>
+                                            编辑</a>
+                                        <a href="#" class="button button-danger button-fill">
+                                            <i class="fa fa-trash fa-fw" ></i>
+                                            删除</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="user" class="tab">
+                    <p><a href="#" class="open-popup button button-fill button-success button-big" data-popup=".popup-add-user">
+                        <i class="fa fa-plus fa-fw" ></i>
+                        添加用户</a></p>
+                    <div class="list-block media-list">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">RaHsu</div>
+                                            <div class="item-after">用户</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-button">
+                                    <p class="buttons-row">
+                                        <a href="#" class="open-popup button button-fill" data-popup=".popup-modify-user">
+                                            <i class="fa fa-pencil fa-fw" ></i>
+                                            编辑</a>
+                                        <a href="#" class="button button-danger button-fill">
+                                            <i class="fa fa-trash fa-fw" ></i>
+                                            删除</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加管理员的popup-->
+    <div class="popup popup-add-admin">
+        <div class="content-block">
+            <form action="" id="form">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">账号</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="account name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Date -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">真实姓名</div>
+                                    <div class="item-input">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-danger close-popup">取消</a></div>
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-success" onclick="submit()">提交</a></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--修改管理员的popup-->
+    <div class="popup popup-modify-admin">
+        <div class="content-block">
+            <form action="" id="form">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">账号</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="account name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Date -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">真实姓名</div>
+                                    <div class="item-input">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-danger close-popup">取消</a></div>
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-success" onclick="submit()">提交</a></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--添加用户的popup-->
+    <div class="popup popup-add-user">
+        <div class="content-block">
+            <form action="" id="form">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">账号</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="account name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Date -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">真实姓名</div>
+                                    <div class="item-input">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-danger close-popup">取消</a></div>
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-success" onclick="submit()">提交</a></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--修改用户的popup-->
+    <div class="popup popup-modify-user">
+        <div class="content-block">
+            <form action="" id="form">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">账号</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="account name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Date -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">真实姓名</div>
+                                    <div class="item-input">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-danger close-popup">取消</a></div>
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-success" onclick="submit()">提交</a></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+    <script>
+
+    </script>
+
+</body>
+</html>

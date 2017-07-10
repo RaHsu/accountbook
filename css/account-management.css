@@ -1,0 +1,19 @@
+.list-block .item-text{
+    height: 1rem;
+}
+.content-block{
+    margin: .2rem 0;
+}
+.content-button{
+    border-bottom: 1px solid #eee;
+    padding: 0 0.4rem;
+}
+.buttons-row{
+    margin: 0.3rem 0;
+}
+.buttons-row .button{
+    color: #fff;
+}
+.list-block{
+    margin: 0 0;
+}

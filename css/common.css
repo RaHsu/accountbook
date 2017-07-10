@@ -1,0 +1,24 @@
+.money-expend{
+    color: #f6383a;
+    font-weight: 700;
+}
+.money-income{
+    color: #2ac845;
+    font-weight: 700;
+}
+.money-rest{
+    float: right;
+    color: #FF6600;
+    font-weight: bolder;
+}
+.hr{
+    margin: 5px 0;
+    height: 1px;
+    background-color: #eee;
+}
+.modal-overlay.modal-overlay-visible,
+.popup-overlay.modal-overlay-visible,
+.preloader-indicator-overlay.modal-overlay-visible{
+    opacity: 0;
+    z-index: -1;
+}

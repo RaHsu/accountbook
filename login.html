@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登录</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/sm-extend.min.css">
+
+</head>
+<body>
+
+        <div class="page">
+            <header class="bar bar-nav">
+                <h1 class="title">登录</h1>
+            </header>
+            <div class="content">
+                <div class="list-block">
+                    <form action="login.php" id="form" method="post">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">账号</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="Your Account" id="account">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="Password" class="" id="password">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    </form>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-100"><a href="#" class="button button-big button-fill button-success" onclick="submit()">提交</a></div>
+                    </div>
+                </div>
+        </div>
+        </div>
+
+
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+        <script src="js/common.js"></script>
+        <script>
+            function submit() {
+                var form = document.getElementById("form");
+                var account = document.getElementById('account').value;
+                var password = document.getElementById('password').value;
+                if(isEmpty(account) == false){
+                    $.alert('用户名不能为空');
+                    return false;
+                }
+                else if(isLegal(account) == false){
+                    $.alert('用户名含有非法字符');
+                    return false;
+                }
+                else if(isEmpty(password) == false){
+                    $.alert('密码不能为空');
+                    return false;
+                }
+                else if(isLegal(password) == false){
+                    $.alert('密码含有非法字符');
+                    return false;
+                }
+                else{
+                    form.submit();
+                }
+
+            }
+        </script>
+
+</body>
+</html>

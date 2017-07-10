@@ -1,0 +1,11 @@
+.list-block .item-text{
+    height: 1rem;
+}
+
+.item-content .item-title{
+    font-weight: bolder;
+}
+
+.card-content-inner{
+    font-size: .9rem;
+}
