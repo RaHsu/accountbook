@@ -6,7 +6,7 @@ function _POST($value){
 //连接数据库
 function connect_mydb(){
 	global $mydb;
-	$mydb = mysqli_connect("localhost","username","password","dbname");
+	$mydb = mysqli_connect("localhost","root","","accountbook");
 	if (!$mydb)
  	{
   		die('链接不到数据库');
@@ -16,7 +16,7 @@ function connect_mydb(){
 //选择数据库
 function select_mydb(){
 	global $mydb;
-	mysqli_select_db($mydb,'dbname');
+	mysqli_select_db($mydb,'accountbook');
 	mysqli_query($mydb,'SET NAMES UTF8');
 
 }
@@ -42,6 +42,11 @@ function fetch_array($sql){
 	return $row;
 }
 
+//查找数据row方法
+function fetch_row($data){
+    $row=mysqli_fetch_row($data);
+    return $row;
+}
 
 
 
